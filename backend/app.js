@@ -24,7 +24,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/baby", Babyrouter);
 app.use("/api/baby/login", LoginRouter);
 app.use("/api/baby/register", RegisterRouter);
-
+app.get('/',(req,res)=>{
+res.send("Server is working fine")
+})
 app.listen(process.env.PORT, function () {
   console.log(`server is connected on ${process.env.PORT}`);
 });
