@@ -1,0 +1,8 @@
+.container{
+    /* column-gap: 50px; */
+    /* margin-left: 10px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}

@@ -1,0 +1,30 @@
+input{
+    width: 550px;
+    height: 40px;
+    border-radius: 5px;
+    justify-content: center;
+     text-align: center;
+}
+button{
+    width: 550;
+    height: 30px;
+}
+.form{
+    
+    color: black;
+    background-color: rgb(201, 220, 234);
+    
+}
+.form1{
+    background-color: rgb(172, 203, 226);
+
+}
+/* .form input [type="text"]{
+    width: 300px; 
+    padding: 10px;
+} */
+.style{
+margin-left: 100px;}
+
+.one{
+    margin-left: 490px;}

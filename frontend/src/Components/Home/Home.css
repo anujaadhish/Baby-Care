@@ -1,0 +1,44 @@
+.image{
+    line-height: 1.5rem;
+}
+.text{
+ padding-left: 400px;
+}
+
+
+/* .display{
+    display: flex;
+   line-height: 1.7;
+   
+  
+   
+   margin: 10px; 
+   opacity: 1;
+   padding: 30px 150px;
+   margin: 0 15px 25px;
+
+   
+
+} */
+.display{
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    /* margin-bottom: 2.5%; */
+    /* float: left;
+    width: 1234px;
+    padding: 31px 50px 26px;
+    position: relative;
+    z-index: 4;
+    margin-bottom: 0; */
+    margin-bottom: 20px;
+    margin: 10px;
+    background-color: bisque;
+
+}
+
+body{
+    width: 100%;
+}
+.color{
+    background-color: rgb(203, 253, 253);
+}
