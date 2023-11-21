@@ -53,7 +53,7 @@ const Singleproducts = () => {
     <div>
       <center>
       <Card style={{ width: "15rem" }}>
-        <Card.Img variant="top" src={`/images/${productData.image}`} />
+        <Card.Img variant="top" src={`${productData.image}`} />
         <Card.Body>
           <Card.Title>{productData.category}</Card.Title>
           <Card.Text>{productData.brand}</Card.Text>

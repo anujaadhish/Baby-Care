@@ -75,7 +75,7 @@ window.location.reload();
         
         {cart.map((item,index)=>(
  <Card key={index} style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={`/images/${item.image}`} />
+        <Card.Img variant="top" src={`${item.image}`} />
       <Card.Body>
         <Card.Title>
         {item.productName}
