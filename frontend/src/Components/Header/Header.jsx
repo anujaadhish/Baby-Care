@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { BsCartFill, BsFillHeartFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Dropdown from "react-bootstrap/Dropdown";
 // import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";

@@ -319,8 +319,8 @@ Babyrouter.post("/add-cart", checkAuth, async (req, res) => {
         price: req.body.price,
         // image: req.file.filename,
         quantity: req.body.quantity,
-        // image: req.body.image,
-        image: req.file? req.file.path :null,
+        image: req.body.image,
+        // image: req.file? req.file.path :null,
         username: req.userData.userName,
         subtotal: req.body.subtotal,
       });
@@ -358,8 +358,8 @@ Babyrouter.post("/add-cart", checkAuth, async (req, res) => {
           price: req.body.price,
           // image: req.file.filename,
           quantity: req.body.quantity,
-          // image: req.body.image,
-          image: req.file? req.file.path :null,
+          image: req.body.image,
+          // image: req.file? req.file.path :null,
           username: req.userData.userName,
           // subtotal:req.body.subtotal
         };
@@ -421,8 +421,8 @@ Babyrouter.post("/add-wishlist", checkAuth, (req, res) => {
     brand: req.body.brand,
     productName: req.body.productName,
     price: req.body.price,
-    // image: req.body.image,
-    image: req.file? req.file.path :null,
+    image: req.body.image,
+    // image: req.file? req.file.path :null,
     username: req.userData.userName,
   });
   Data.save()
