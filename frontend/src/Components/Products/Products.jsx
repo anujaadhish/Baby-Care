@@ -16,7 +16,7 @@ const Products = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4100/api/baby/admin", {
+      .get("https://baby-care.onrender.com/api/baby/admin", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -30,7 +30,7 @@ const Products = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4100/api/baby/view-babyproducts")
+      .get("https://baby-care.onrender.com/api/baby/view-babyproducts")
       .then((response) => {
         setProductData(response.data.data);
       });

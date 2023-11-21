@@ -10,7 +10,7 @@ const Delete = () => {
 
     
     const handleDelete=(id)=>{
-        axios.delete(`http://localhost:4100/api/baby/delete-babyproducts/${id}`)
+        axios.delete(`https://baby-care.onrender.com/api/baby/delete-babyproducts/${id}`)
         .then((response)=>
          navigate('/Products'))
         

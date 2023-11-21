@@ -17,7 +17,7 @@ const Profileedit = () => {
       });
       useEffect(() => {
         axios
-          .get(`http://localhost:4100/api/baby/profile`,{
+          .get(`https://baby-care.onrender.com/api/baby/profile`,{
             headers:{
               Authorization:`Bearer ${token}`
             }
@@ -39,7 +39,7 @@ const Profileedit = () => {
       const handleSubmit = (event) => {
         event.preventDefault();
         axios
-          .put(`http://localhost:4100/api/baby/update-profile/${product._id}`,product,
+          .put(`https://baby-care.onrender.com/api/baby/update-profile/${product._id}`,product,
           )
 
           .then(() => {
