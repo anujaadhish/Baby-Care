@@ -13,7 +13,7 @@ const Singleproducts = () => {
   const { id } = useParams();
   useEffect(() => {
     axios
-      .get(`http://localhost:4100/api/baby/view-singlebabyproducts/${id}`)
+      .get(`https://baby-care.onrender.com/api/baby/view-singlebabyproducts/${id}`)
       .then((response) => {
         setProductData(response.data.data);
       });
@@ -23,7 +23,7 @@ const Singleproducts = () => {
     if (token !== null) {
       axios
         // .post("http://localhost:4100/api/baby/add-cart", productData, {
-        .post("http://localhost:4100/api/baby/add-cart", product, {
+        .post("https://baby-care.onrender.com/api/baby/add-cart", product, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

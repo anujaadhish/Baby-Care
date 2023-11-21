@@ -19,7 +19,7 @@ const EditProducts = () => {
       });
       useEffect(() => {
         axios
-          .get(`http://localhost:4100/api/baby/view-singlebabyproducts/${id}`)
+          .get(`https://baby-care.onrender.com/api/baby/view-singlebabyproducts/${id}`)
           .then((response) => {
             console.log(response);
             setProduct(response.data.data);
@@ -46,7 +46,7 @@ const EditProducts = () => {
         formData.append('productName',product.productName)
          formData.append('image',product.image)
         axios
-          .put(`http://localhost:4100/api/baby/update-babyproducts/${id}`,formData)
+          .put(`https://baby-care.onrender.com/api/baby/update-babyproducts/${id}`,formData)
 
           .then(() => {
             navigate("/Products");

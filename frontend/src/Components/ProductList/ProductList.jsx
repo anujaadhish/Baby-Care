@@ -13,7 +13,7 @@ const ProductList = () => {
     const token=sessionStorage.getItem('token')
     console.log(token);
     useEffect(()=>{
-        axios.get("http://localhost:4100/api/baby/view-babyproducts")
+        axios.get("https://baby-care.onrender.com/api/baby/view-babyproducts")
         .then((response)=>{ 
           setProductData(response.data.data)
           console.log(response.data);
@@ -26,7 +26,7 @@ const ProductList = () => {
           // event.preventDefault();
           if(token !==null){
           axios
-          .post("http://localhost:4100/api/baby/add-wishlist",item,
+          .post("https://baby-care.onrender.com/api/baby/add-wishlist",item,
           {
             headers:{
               Authorization:`Bearer ${token}`
