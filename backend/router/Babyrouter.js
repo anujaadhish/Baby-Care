@@ -10,25 +10,45 @@ const cart = require("../model/cartSchema");
 const wishlist = require("../model/wishlistSchema");
 const cartSchema = require("../model/cartSchema");
 // const path = require("path");
+const cloudinary= require("cloudinary").v2
+const {CloudinaryStorage} = require("multer-storage-cloudinary")
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "../frontend/public/images/");
-  },
-  filename: (req, file, cb) => {
-    cb(null, file.originalname);
-  },
-});
 
-const fileFilter = (req, file, cb) => {
-  const allowedFileTypes = ["image/jpeg", "image/jpg", "image/png"];
-  if (allowedFileTypes.includes(file.mimetype)) {
-    cb(null, true);
-  } else {
-    cb(null, false);
+cloudinary.config({
+  cloud_name:process.env.CLOUD_NAME,
+  api_key :process.env.API_KEY,
+  api_secret:process.env.API_SECRET
+})
+const storage =new CloudinaryStorage({
+  cloudinary:cloudinary,
+  params:{
+    folder:'Babycare',
   }
-};
-const upload = multer({ storage, fileFilter });
+})
+const upload= multer({storage:storage})
+
+
+
+
+
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, "../frontend/public/images/");
+//   },
+//   filename: (req, file, cb) => {
+//     cb(null, file.originalname);
+//   },
+// });
+
+// const fileFilter = (req, file, cb) => {
+//   const allowedFileTypes = ["image/jpeg", "image/jpg", "image/png"];
+//   if (allowedFileTypes.includes(file.mimetype)) {
+//     cb(null, true);
+//   } else {
+//     cb(null, false);
+//   }
+// };
+// const upload = multer({ storage, fileFilter });
 
 // Babyrouter.post("/add-babyproducts", (req, res) => {
 Babyrouter.post("/add-babyproducts", upload.single("image"), (req, res) => {
@@ -37,7 +57,8 @@ Babyrouter.post("/add-babyproducts", upload.single("image"), (req, res) => {
     category: req.body.category,
     brand: req.body.brand,
     price: req.body.price,
-    image: req.file.filename,
+    // image: req.file.filename,
+    image: req.file? req.file.path :null
   });
   Data.save()
     .then((Data) => {
@@ -84,7 +105,9 @@ Babyrouter.put(
           (data.productName = req.body.productName),
           (data.price = req.body.price),
           (data.quantity = req.body.quantity);
-        data.image = req.file.filename;
+        // data.image = req.file.filename;
+        data.image = req.file? req.file.path :null
+
 
         data
           .save()
@@ -296,7 +319,8 @@ Babyrouter.post("/add-cart", checkAuth, async (req, res) => {
         price: req.body.price,
         // image: req.file.filename,
         quantity: req.body.quantity,
-        image: req.body.image,
+        // image: req.body.image,
+        image: req.file? req.file.path :null,
         username: req.userData.userName,
         subtotal: req.body.subtotal,
       });
@@ -334,7 +358,8 @@ Babyrouter.post("/add-cart", checkAuth, async (req, res) => {
           price: req.body.price,
           // image: req.file.filename,
           quantity: req.body.quantity,
-          image: req.body.image,
+          // image: req.body.image,
+          image: req.file? req.file.path :null,
           username: req.userData.userName,
           // subtotal:req.body.subtotal
         };
@@ -396,7 +421,8 @@ Babyrouter.post("/add-wishlist", checkAuth, (req, res) => {
     brand: req.body.brand,
     productName: req.body.productName,
     price: req.body.price,
-    image: req.body.image,
+    // image: req.body.image,
+    image: req.file? req.file.path :null,
     username: req.userData.userName,
   });
   Data.save()

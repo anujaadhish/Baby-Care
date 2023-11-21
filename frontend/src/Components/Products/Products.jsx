@@ -44,7 +44,9 @@ const Products = () => {
           <div className="column"style={{flexWrap:"wrap",display:"flex"}}>
           {productData.map((item) => (
             <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src={`/images/${item.image}`} />
+              {/* <Card.Img variant="top" src={`/images/${item.image}`} /> */}
+              {/* <Card.Img variant="top" src={'baby1.png'} /> */}
+              <Card.Img variant="top" src={`${item.image}`} />
               <Card.Body>
                 <Card.Title>{item.productName}</Card.Title>
                 <Card.Text>
