@@ -35,7 +35,7 @@ const AddProducts = () => {
     formData.append("image", product.image);
 
     axios
-      .post(`https://baby-care.onrender.com/api/baby/add-babyproducts`, formData)
+      .post(`http://localhost:4100/api/baby/add-babyproducts`, formData)
       .then((response) => {
         
         console.log(response);

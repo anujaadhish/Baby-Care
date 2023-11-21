@@ -41,7 +41,7 @@ const Cart = () => {
 
 const handleDecrement=(id)=>{
   
-axios.put(`https://baby-care.onrender.com/api/baby/quantitydecrement/${id}`)
+axios.put(`http://localhost:4100/api/baby/quantitydecrement/${id}`)
 
 window.location.reload();
 // navigate('/Cart')
@@ -49,13 +49,13 @@ window.location.reload();
 
 }
 const handleIncrement=(id)=>{
-  axios.put(`https://baby-care.onrender.com/api/baby/quantityincrement/${id}`)
+  axios.put(`http://localhost:4100/api/baby/quantityincrement/${id}`)
 window.location.reload();
 // navigate('/Cart')
 
 }
   const handleDelete=(id)=>{
-    axios.delete(`https://baby-care.onrender.com/api/baby/delete-cart/${id}`)
+    axios.delete(`http://localhost:4100/api/baby/delete-cart/${id}`)
     window.location.reload();
     navigate('/Cart')
 

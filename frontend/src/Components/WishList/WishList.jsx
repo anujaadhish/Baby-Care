@@ -13,7 +13,7 @@ const WishList = () => {
   useEffect(()=>{
     if(token!==null){
 
-    axios.get('https://baby-care.onrender.com/api/baby/wishlist',
+    axios.get('http://localhost:4100/api/baby/wishlist',
     {
       headers:{
         Authorization:`Bearer ${token}`

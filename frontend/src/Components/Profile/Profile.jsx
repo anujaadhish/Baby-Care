@@ -10,7 +10,7 @@ const Profile = () => {
    useEffect(() => {
     if(token !==null){
     axios
-      .get(`https://baby-care.onrender.com/api/baby/profile`, {
+      .get(`http://localhost:4100/api/baby/profile`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
