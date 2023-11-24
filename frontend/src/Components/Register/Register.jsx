@@ -1,7 +1,7 @@
 import React , { useState }  from 'react'
 import './Register.css'
 import axios from 'axios'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -90,7 +90,11 @@ const [error,setError]=useState({})
                     type="text"
                     id="form3Example1cg"
                     className="form-control form-control-lg"
+                    name='username'
+                    onChange={inputChange}
                   />
+                   {error.username&&<span>{error.username}</span>}
+
                   
                 </div>
               <label className="form-label" htmlFor="form3Example1cg">
@@ -101,8 +105,11 @@ const [error,setError]=useState({})
                     type="text"
                     id="form3Example1cg"
                     className="form-control form-control-lg"
+                    name='name'
+                    onChange={inputChange}
                   />
-                  
+                         {error.name&&<span>{error.name}</span>}
+ 
                 </div>
                 <div className="form-outline mb-4">
                 <label className="form-label" htmlFor="form3Example3cg">
@@ -112,8 +119,11 @@ const [error,setError]=useState({})
                     type="email"
                     id="form3Example3cg"
                     className="form-control form-control-lg"
+                    name='email'
+                    onChange={inputChange}
                   />
-                 
+                       {error.email&&<span>{error.email}</span>}
+
                 </div>
                 <div className="form-outline mb-4">
                 <label className="form-label" htmlFor="form3Example4cg">
@@ -123,8 +133,11 @@ const [error,setError]=useState({})
                     type="password"
                     id="form3Example4cg"
                     className="form-control form-control-lg"
+                    name='password'
+                    onChange={inputChange}
                   />
-                 
+                       {error.password&&<span>{error.password}</span>}
+
                 </div>
                 <div className="form-outline mb-4">
                 <label className="form-label" htmlFor="form3Example4cdg">
@@ -134,8 +147,11 @@ const [error,setError]=useState({})
                     type="phone"
                     id="form3Example4cdg"
                     className="form-control form-control-lg"
+                    name='phone'
+                    onChange={inputChange}
+
                   />
-                 
+                       {error.phone&&<span>{error.phone}</span>}
                 </div>
                 <div className="form-check d-flex justify-content-center mb-5">
                   <input
@@ -155,16 +171,18 @@ const [error,setError]=useState({})
                   <button
                     type="button"
                     className="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
-                    
+                    onClick={(event)=>{handleSubmit(event)}}
                   >
                     Register
                   </button>
                 </div>
                 <p className="text-center text-muted mt-5 mb-0">
                   Have already an account?{" "}
+                  <Link to={'/Login'}>
                   <a href="#!" className="fw-bold text-body">
                     <u>Login here</u>
                   </a>
+                  </Link>
                 </p>
               </form>
             </div>
