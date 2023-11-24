@@ -82,45 +82,60 @@ const [error,setError]=useState({})
                 Create an account
               </h2>
               <form>
+              <label className="form-label" htmlFor="form3Example1cg">
+                     UserName
+                  </label>
                 <div className="form-outline mb-4">
                   <input
                     type="text"
                     id="form3Example1cg"
                     className="form-control form-control-lg"
                   />
-                  <label className="form-label" htmlFor="form3Example1cg">
-                    Your Name
+                  
+                </div>
+              <label className="form-label" htmlFor="form3Example1cg">
+                     Name
                   </label>
+                <div className="form-outline mb-4">
+                  <input
+                    type="text"
+                    id="form3Example1cg"
+                    className="form-control form-control-lg"
+                  />
+                  
                 </div>
                 <div className="form-outline mb-4">
+                <label className="form-label" htmlFor="form3Example3cg">
+                    Your Email
+                  </label>
                   <input
                     type="email"
                     id="form3Example3cg"
                     className="form-control form-control-lg"
                   />
-                  <label className="form-label" htmlFor="form3Example3cg">
-                    Your Email
-                  </label>
+                 
                 </div>
                 <div className="form-outline mb-4">
+                <label className="form-label" htmlFor="form3Example4cg">
+                    Password
+                  </label>
                   <input
                     type="password"
                     id="form3Example4cg"
                     className="form-control form-control-lg"
                   />
-                  <label className="form-label" htmlFor="form3Example4cg">
-                    Password
-                  </label>
+                 
                 </div>
                 <div className="form-outline mb-4">
+                <label className="form-label" htmlFor="form3Example4cdg">
+                    Phone
+                  </label>
                   <input
-                    type="password"
+                    type="phone"
                     id="form3Example4cdg"
                     className="form-control form-control-lg"
                   />
-                  <label className="form-label" htmlFor="form3Example4cdg">
-                    Repeat your password
-                  </label>
+                 
                 </div>
                 <div className="form-check d-flex justify-content-center mb-5">
                   <input
@@ -140,6 +155,7 @@ const [error,setError]=useState({})
                   <button
                     type="button"
                     className="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
+                    style={{marginTop:"15px"}}
                   >
                     Register
                   </button>
