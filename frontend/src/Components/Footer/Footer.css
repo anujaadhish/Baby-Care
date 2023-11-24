@@ -1,5 +1,6 @@
 .App{
-    margin-top:210px ;
+    /* margin-top:210px ; */
+    position: fixed;
     background-color: black;
     width: 100%;
     text-align: center;
