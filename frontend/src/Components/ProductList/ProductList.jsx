@@ -39,8 +39,8 @@ const ProductList = () => {
           })
         }else navigate("/Login")
         };
-      
-  return (
+       
+        return (
     <>
     {/* {token?( */}
       <>
@@ -48,12 +48,9 @@ const ProductList = () => {
     <div className='row'>
       <div>
     <div className="container">
-
-
     <div style={{display:"flex",flexWrap:"wrap",justifyContent:"space-around",marginBottom:"10px"}}>
     {productData.map((item)=>(
-    
-<Card className='mb-4' key={item._id} style={{ width: '18rem' }}>
+  <Card className='mb-4' key={item._id} style={{ width: '18rem' }}>
   <Link to={`/Singleproducts/${item._id}`}>
       <Card.Img  variant="top" src={`${item.image}`} /></Link>
       <Card.Body>

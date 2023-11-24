@@ -64,7 +64,7 @@ const [error,setError]=useState({})
     })
   }
   return (
-    <div style={{paddingRight:"330px"}}>
+    <div >
          <div className='register-container'>
         <h1>Register</h1>
         <form action="" onSubmit={handleSubmit}>

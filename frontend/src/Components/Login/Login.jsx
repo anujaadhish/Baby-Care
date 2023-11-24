@@ -30,12 +30,22 @@ const Login = () => {
         sessionStorage.setItem("userRole", response.data.userRole);
 
         if (response.status === 200) {
-          toast.success("logged in  successfully");
+          toast.success("logged in  successfully", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
           setTimeout(() => {
             navigate("/");
             window.location.reload();
-          }, 3000);
+          }, 3000)
         }
+        
         // event.preventDefault();
 
         // window.location.reload();
@@ -121,21 +131,23 @@ const Login = () => {
                             }}
                           >
                             Log in
-                          </button><span> <a className="text-muted" href="#!">
-                         Forgot password?
-                          </a> </span>
-
-                          
+                          </button>
+                          <span>
+                            {" "}
+                            <a className="text-muted" href="#!">
+                              Forgot password?
+                            </a>{" "}
+                          </span>
                         </div>
                         <div className="d-flex align-items-center justify-content-center pb-4">
                           <p className="mb-0 me-2">Don't have an account?</p>
-                          <Link to={'/Register'}>
-                          <button
-                            type="button"
-                            className="btn btn-outline-danger"
-                          >
-                            Create new
-                          </button>
+                          <Link to={"/Register"}>
+                            <button
+                              type="button"
+                              className="btn btn-outline-danger"
+                            >
+                              Create new
+                            </button>
                           </Link>
                         </div>
                       </form>
