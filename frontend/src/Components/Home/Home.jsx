@@ -219,7 +219,7 @@ const Home = () => {
           <Row>
             
             <Col xs={6} md={4}>
-           {/* <Link to={'/ProductList'}>  <Image src="/squareimage.webp" rounded /></Link>  */}
+           <Link to={'/ProductList'}>  <Image src="/squareimage.webp" rounded size /></Link> 
             </Col>
             <Col xs={6} md={4}>
               {/* <Image src="circleimage.webp" roundedCircle /> */}
@@ -231,6 +231,7 @@ const Home = () => {
             </Col>
           </Row>
         </Container>
+      
       </div>
     </div>
   );
