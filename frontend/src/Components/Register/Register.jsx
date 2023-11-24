@@ -155,7 +155,7 @@ const [error,setError]=useState({})
                   <button
                     type="button"
                     className="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
-                    style={{marginTop:"15px"}}
+                    
                   >
                     Register
                   </button>
