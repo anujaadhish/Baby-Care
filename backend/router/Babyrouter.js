@@ -10,26 +10,21 @@ const cart = require("../model/cartSchema");
 const wishlist = require("../model/wishlistSchema");
 const cartSchema = require("../model/cartSchema");
 // const path = require("path");
-const cloudinary= require("cloudinary").v2
-const {CloudinaryStorage} = require("multer-storage-cloudinary")
-
+const cloudinary = require("cloudinary").v2;
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
 
 cloudinary.config({
-  cloud_name:process.env.CLOUD_NAME,
-  api_key :process.env.API_KEY,
-  api_secret:process.env.API_SECRET
-})
-const storage =new CloudinaryStorage({
-  cloudinary:cloudinary,
-  params:{
-    folder:'Babycare',
-  }
-})
-const upload= multer({storage:storage})
-
-
-
-
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
+});
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: "Babycare",
+  },
+});
+const upload = multer({ storage: storage });
 
 // const storage = multer.diskStorage({
 //   destination: (req, file, cb) => {
@@ -58,7 +53,7 @@ Babyrouter.post("/add-babyproducts", upload.single("image"), (req, res) => {
     brand: req.body.brand,
     price: req.body.price,
     // image: req.file.filename,
-    image: req.file? req.file.path :null
+    image: req.file ? req.file.path : null,
   });
   Data.save()
     .then((Data) => {
@@ -106,8 +101,7 @@ Babyrouter.put(
           (data.price = req.body.price),
           (data.quantity = req.body.quantity);
         // data.image = req.file.filename;
-        data.image = req.file? req.file.path :null
-
+        data.image = req.file ? req.file.path : null;
 
         data
           .save()
@@ -168,7 +162,7 @@ Babyrouter.put("/update-profile/:id", (req, res) => {
       return res.status(400).json({
         success: false,
         error: true,
-        errorMessage:error.message,
+        errorMessage: error.message,
         message: "Profile is not updated ,error",
       });
     });
