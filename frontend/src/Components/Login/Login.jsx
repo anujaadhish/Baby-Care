@@ -129,6 +129,7 @@ const Login = () => {
                             onClick={(event) => {
                               handleSubmit(event);
                             }}
+                            style={{paddingBottom:"10px"}}
                           >
                             Log in
                           </button>
