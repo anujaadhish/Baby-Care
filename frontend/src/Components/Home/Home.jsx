@@ -222,7 +222,7 @@ const Home = () => {
            <Link to={'/ProductList'}>  <Image src="/squareimage.webp" rounded size /></Link> 
             </Col>
             <Col xs={6} md={4}>
-              {/* <Image src="circleimage.webp" roundedCircle /> */}
+              <Image src="circleimage.webp" roundedCircle />
             </Col>
             <Col xs={6} md={4}>
             <Link to={'/ProductList'} >  <Image src="squareimg.webp" thumbnail /></Link> 
