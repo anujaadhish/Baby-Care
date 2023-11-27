@@ -77,7 +77,8 @@ const Products = () => {
           </div>
         </>
       ) : (
-        <h1>You've to be an Admin to access this!</h1>
+        // <h1>You've to be an Admin to access this!</h1>
+        null
       )}
     </>
   );
