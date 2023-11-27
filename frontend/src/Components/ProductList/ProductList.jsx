@@ -52,7 +52,7 @@ const ProductList = () => {
     {productData.map((item)=>(
   <Card className='mb-4' key={item._id} style={{ width: '18rem' }}>
   <Link to={`/Singleproducts/${item._id}`}>
-      <Card.Img  variant="top" src={`${item.image}`} /></Link>
+      <Card.Img  variant="top" src={`{item.image}`} /></Link>
       <Card.Body>
         <Card.Title>
         {item.productName}
