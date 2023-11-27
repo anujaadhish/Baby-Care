@@ -172,7 +172,7 @@ const [error,setError]=useState({})
                     type="button"
                     className="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
                     onClick={(event)=>{handleSubmit(event)}}
-                    style={{paddingBottom:"15px"}}
+                    style={{paddingBottom:"25px"}}
                   >
                     Register
                   </button>
