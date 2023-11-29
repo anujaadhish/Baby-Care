@@ -63,7 +63,6 @@ const ProductList = () => {
         </Card.Text>
         <Card.Text>
         {item.category}
-
         </Card.Text>
         <Card.Text>
         {item.price}

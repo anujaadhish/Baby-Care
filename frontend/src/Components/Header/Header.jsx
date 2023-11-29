@@ -45,7 +45,7 @@ const Header = () => {
           // console.log(res.data.data.userRole)
         });
        
-    }
+    };
     if(token !==null){
       axios.get("https://baby-care.onrender.com/api/baby/cart",{
         headers: {
