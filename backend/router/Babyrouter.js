@@ -46,31 +46,69 @@ const upload = multer({ storage: storage });
 // const upload = multer({ storage, fileFilter });
 
 // Babyrouter.post("/add-babyproducts", (req, res) => {
-Babyrouter.post("/add-babyproducts", upload.single("image"), (req, res) => {
-  const Data = new baby({
-    productName: req.body.productName,
-    category: req.body.category,
-    brand: req.body.brand,
-    price: req.body.price,
-    // image: req.file.filename,
-    image: req.file ? req.file.path : null,
-  });
-  Data.save()
-    .then((Data) => {
-      return res.status(201).json({
-        success: true,
-        error: false,
-        data: Data,
-      });
-    })
-    .catch((error) => {
-      return res.status(400).json({
+// Babyrouter.post("/add-babyproducts", upload.single("image"), (req, res) => {
+//   const Data = new baby({
+//     productName: req.body.productName,
+//     category: req.body.category,
+//     brand: req.body.brand,
+//     price: req.body.price,
+//     // image: req.file.filename,
+//     image: req.file ? req.file.path : null,
+//   });
+//   Data.save()
+//     .then((Data) => {
+//       return res.status(201).json({
+//         success: true,
+//         error: false,
+//         data: Data,
+//       });
+//     })
+//     .catch((error) => {
+//       return res.status(400).json({
+//         success: false,
+//         error: true,
+//         message: "Data not Added",
+//       });
+//     });
+// });
+
+Babyrouter.post(
+  "/add-babyproducts",
+  upload.single("image"),
+  async (req, res) => {
+    try {
+      const Data = {
+        productName: req.body.productName,
+        category: req.body.category,
+        brand: req.body.brand,
+        price: req.body.price,
+        // image: req.file.filename,
+        image: req.file ? req.file.path : null,
+      };
+      const result = await baby(Data).save();
+      if (result) {
+        return res.status(201).json({
+          success: true,
+          error: false,
+          data: Data,
+        });
+      } else {
+        return res.status(400).json({
+          success: false,
+          error: true,
+          message: "Data not Added",
+        });
+      }
+    } catch (error) {
+      return res.status(501).json({
         success: false,
         error: true,
         message: "Data not Added",
+        errorMessage: error.message,
       });
-    });
-});
+    }
+  }
+);
 
 Babyrouter.delete("/delete-babyproducts/:id", (req, res) => {
   baby
